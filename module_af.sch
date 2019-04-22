@@ -3,7 +3,7 @@
 <eagle version="9.3.0">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
@@ -14587,6 +14587,115 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="diode" urn="urn:adsk.eagle:library:210">
+<description>&lt;b&gt;Diodes&lt;/b&gt;&lt;p&gt;
+Based on the following sources:
+&lt;ul&gt;
+&lt;li&gt;Motorola : www.onsemi.com
+&lt;li&gt;Fairchild : www.fairchildsemi.com
+&lt;li&gt;Philips : www.semiconductors.com
+&lt;li&gt;Vishay : www.vishay.de
+&lt;/ul&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="SMBG" urn="urn:adsk.eagle:footprint:43223/1" library_version="4">
+<description>&lt;b&gt;DO-214AA GULL-WING&lt;/b&gt;&lt;p&gt;
+Source: www.rsonline.de .. SMBJ12/C/15/C/24/C/30/C/5.0/C/7.5/C Voltage Suppressor. Data Sheet</description>
+<wire x1="2.24" y1="1.85" x2="2.24" y2="-1.85" width="0.1016" layer="21"/>
+<wire x1="2.24" y1="-1.85" x2="-2.24" y2="-1.85" width="0.1016" layer="21"/>
+<wire x1="-2.24" y1="-1.85" x2="-2.24" y2="1.85" width="0.1016" layer="21"/>
+<wire x1="-2.24" y1="1.85" x2="2.24" y2="1.85" width="0.1016" layer="21"/>
+<smd name="C" x="-3.17" y="0" dx="1.27" dy="2.16" layer="1"/>
+<smd name="A" x="3.17" y="0" dx="1.27" dy="2.16" layer="1" rot="R180"/>
+<text x="-1.905" y="2.54" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1.905" y="-3.81" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-3.24" y1="-1.05" x2="-2.23" y2="1.05" layer="51"/>
+<rectangle x1="2.24" y1="-1.05" x2="3.24" y2="1.05" layer="51"/>
+</package>
+<package name="SMBJ" urn="urn:adsk.eagle:footprint:43224/1" library_version="4">
+<description>&lt;b&gt;DO-214AA Modified J_BEND&lt;/b&gt;&lt;p&gt;
+Source: www.rsonline.de .. SMBJ12/C/15/C/24/C/30/C/5.0/C/7.5/C Voltage Suppressor. Data Sheet</description>
+<wire x1="2.24" y1="1.92" x2="2.24" y2="-1.92" width="0.1016" layer="51"/>
+<wire x1="2.24" y1="-1.92" x2="-2.24" y2="-1.92" width="0.1016" layer="21"/>
+<wire x1="-2.24" y1="-1.92" x2="-2.24" y2="1.92" width="0.1016" layer="51"/>
+<wire x1="-2.24" y1="1.92" x2="2.24" y2="1.92" width="0.1016" layer="21"/>
+<smd name="C" x="-2.03" y="0" dx="1.78" dy="2.16" layer="1"/>
+<smd name="A" x="2.04" y="0" dx="1.78" dy="2.16" layer="1" rot="R180"/>
+<text x="-1.905" y="2.54" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1.905" y="-3.81" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-2.8" y1="-1.1" x2="-2.25" y2="1.1" layer="51"/>
+<rectangle x1="2.25" y1="-1.1" x2="2.8" y2="1.1" layer="51"/>
+</package>
+</packages>
+<packages3d>
+<package3d name="SMBG" urn="urn:adsk.eagle:package:43448/1" type="box" library_version="4">
+<description>DO-214AA GULL-WING
+Source: www.rsonline.de .. SMBJ12/C/15/C/24/C/30/C/5.0/C/7.5/C Voltage Suppressor. Data Sheet</description>
+<packageinstances>
+<packageinstance name="SMBG"/>
+</packageinstances>
+</package3d>
+<package3d name="SMBJ" urn="urn:adsk.eagle:package:43442/2" type="model" library_version="4">
+<description>DO-214AA Modified J_BEND
+Source: www.rsonline.de .. SMBJ12/C/15/C/24/C/30/C/5.0/C/7.5/C Voltage Suppressor. Data Sheet</description>
+<packageinstances>
+<packageinstance name="SMBJ"/>
+</packageinstances>
+</package3d>
+</packages3d>
+<symbols>
+<symbol name="SUPPRESSOR" urn="urn:adsk.eagle:symbol:43222/2" library_version="4">
+<wire x1="1.27" y1="-1.27" x2="0" y2="1.27" width="0.254" layer="94"/>
+<wire x1="0" y1="1.27" x2="-1.27" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="1.27" y1="1.905" x2="1.27" y2="1.27" width="0.254" layer="94"/>
+<wire x1="1.27" y1="1.27" x2="0" y2="1.27" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="-1.27" x2="0" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="0" y1="-1.27" x2="1.27" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="0" y1="1.27" x2="-1.27" y2="1.27" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="1.27" x2="-1.27" y2="0.635" width="0.254" layer="94"/>
+<wire x1="0" y1="2.54" x2="0" y2="1.27" width="0.254" layer="94"/>
+<wire x1="0" y1="-2.54" x2="0" y2="-1.27" width="0.254" layer="94"/>
+<text x="2.794" y="1.905" size="1.778" layer="95">&gt;NAME</text>
+<text x="2.794" y="-0.889" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="A" x="0" y="-2.54" visible="off" length="point" direction="pas" rot="R90"/>
+<pin name="C" x="0" y="2.54" visible="off" length="point" direction="pas" rot="R270"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="SUPPRESSOR-" urn="urn:adsk.eagle:component:43651/3" prefix="D" uservalue="yes" library_version="4">
+<description>&lt;b&gt;Suppressor diode&lt;/b&gt;</description>
+<gates>
+<gate name="G$1" symbol="SUPPRESSOR" x="0" y="0"/>
+</gates>
+<devices>
+<device name="SMBG" package="SMBG">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="C"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:43448/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="SMBJ" package="SMBJ">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="C"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:43442/2"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -14624,6 +14733,7 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <part name="C4" library="parts-passives" library_urn="urn:adsk.eagle:library:8154151" deviceset="CAP-" device="0603" package3d_urn="urn:adsk.eagle:package:8309187/3"/>
 <part name="C7" library="parts-passives" library_urn="urn:adsk.eagle:library:8154151" deviceset="CAP-" device="0603" package3d_urn="urn:adsk.eagle:package:8309187/3"/>
 <part name="AGND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="AGND" device=""/>
+<part name="D1" library="diode" library_urn="urn:adsk.eagle:library:210" deviceset="SUPPRESSOR-" device="SMBJ" package3d_urn="urn:adsk.eagle:package:43442/2"/>
 </parts>
 <sheets>
 <sheet>
@@ -14656,6 +14766,11 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <pinref part="SV1" gate="G$1" pin="1"/>
 <wire x1="50.8" y1="33.02" x2="71.12" y2="33.02" width="0.1524" layer="91"/>
 <label x="68.58" y="33.02" size="1.778" layer="95" align="bottom-right"/>
+</segment>
+<segment>
+<pinref part="SV3" gate="G$1" pin="1"/>
+<wire x1="226.06" y1="81.28" x2="203.2" y2="81.28" width="0.1524" layer="91"/>
+<label x="208.28" y="81.28" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="VSYS" class="0">
@@ -14868,6 +14983,104 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <label x="17.78" y="76.2" size="1.778" layer="95"/>
 </segment>
 </net>
+<net name="RMII_TXEN" class="0">
+<segment>
+<pinref part="SV2" gate="G$1" pin="2"/>
+<wire x1="223.52" y1="43.18" x2="205.74" y2="43.18" width="0.1524" layer="91"/>
+<label x="208.28" y="43.18" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="RMII_MDC" class="0">
+<segment>
+<pinref part="SV2" gate="G$1" pin="3"/>
+<wire x1="238.76" y1="45.72" x2="256.54" y2="45.72" width="0.1524" layer="91"/>
+<label x="254" y="45.72" size="1.778" layer="95" align="bottom-right"/>
+</segment>
+</net>
+<net name="RMII_MDIO" class="0">
+<segment>
+<pinref part="SV2" gate="G$1" pin="4"/>
+<wire x1="223.52" y1="45.72" x2="205.74" y2="45.72" width="0.1524" layer="91"/>
+<label x="208.28" y="45.72" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="RMII_RXER" class="0">
+<segment>
+<pinref part="SV2" gate="G$1" pin="5"/>
+<wire x1="238.76" y1="48.26" x2="256.54" y2="48.26" width="0.1524" layer="91"/>
+<label x="254" y="48.26" size="1.778" layer="95" align="bottom-right"/>
+</segment>
+</net>
+<net name="RMII_TX0" class="0">
+<segment>
+<pinref part="SV2" gate="G$1" pin="10"/>
+<wire x1="223.52" y1="53.34" x2="205.74" y2="53.34" width="0.1524" layer="91"/>
+<label x="208.28" y="53.34" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="RMII_RX0" class="0">
+<segment>
+<pinref part="SV2" gate="G$1" pin="8"/>
+<wire x1="223.52" y1="50.8" x2="205.74" y2="50.8" width="0.1524" layer="91"/>
+<label x="208.28" y="50.8" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="RMII_TXCK" class="0">
+<segment>
+<pinref part="SV2" gate="G$1" pin="6"/>
+<wire x1="223.52" y1="48.26" x2="205.74" y2="48.26" width="0.1524" layer="91"/>
+<label x="208.28" y="48.26" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="RMII_RXDV" class="0">
+<segment>
+<pinref part="SV2" gate="G$1" pin="1"/>
+<wire x1="238.76" y1="43.18" x2="256.54" y2="43.18" width="0.1524" layer="91"/>
+<label x="254" y="43.18" size="1.778" layer="95" align="bottom-right"/>
+</segment>
+</net>
+<net name="RMII_RX1" class="0">
+<segment>
+<pinref part="SV2" gate="G$1" pin="7"/>
+<wire x1="238.76" y1="50.8" x2="256.54" y2="50.8" width="0.1524" layer="91"/>
+<label x="254" y="50.8" size="1.778" layer="95" align="bottom-right"/>
+</segment>
+</net>
+<net name="RMII_TX1" class="0">
+<segment>
+<pinref part="SV2" gate="G$1" pin="9"/>
+<wire x1="238.76" y1="53.34" x2="256.54" y2="53.34" width="0.1524" layer="91"/>
+<label x="254" y="53.34" size="1.778" layer="95" align="bottom-right"/>
+</segment>
+</net>
+<net name="USB_H1_DM" class="0">
+<segment>
+<pinref part="SV3" gate="G$1" pin="2"/>
+<wire x1="226.06" y1="78.74" x2="208.28" y2="78.74" width="0.1524" layer="91"/>
+<label x="210.82" y="78.74" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="USB_H1_DP" class="0">
+<segment>
+<pinref part="SV3" gate="G$1" pin="3"/>
+<wire x1="226.06" y1="76.2" x2="208.28" y2="76.2" width="0.1524" layer="91"/>
+<label x="210.82" y="76.2" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="USB_H2_DM" class="0">
+<segment>
+<pinref part="SV3" gate="G$1" pin="4"/>
+<wire x1="226.06" y1="73.66" x2="208.28" y2="73.66" width="0.1524" layer="91"/>
+<label x="210.82" y="73.66" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="USB_H2_DP" class="0">
+<segment>
+<pinref part="SV3" gate="G$1" pin="5"/>
+<wire x1="226.06" y1="71.12" x2="208.28" y2="71.12" width="0.1524" layer="91"/>
+<label x="210.82" y="71.12" size="1.778" layer="95"/>
+</segment>
+</net>
 </nets>
 </sheet>
 <sheet>
@@ -14945,25 +15158,29 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <instance part="AGND3" gate="VR1" x="236.22" y="40.64" smashed="yes">
 <attribute name="VALUE" x="233.68" y="35.56" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="C3" gate="G$1" x="96.52" y="53.34" smashed="yes">
-<attribute name="NAME" x="97.663" y="53.8226" size="1.778" layer="95"/>
-<attribute name="VALUE" x="97.663" y="48.7426" size="1.778" layer="96"/>
+<instance part="C3" gate="G$1" x="106.68" y="78.74" smashed="yes">
+<attribute name="NAME" x="107.823" y="79.2226" size="1.778" layer="95"/>
+<attribute name="VALUE" x="107.823" y="74.1426" size="1.778" layer="96"/>
 </instance>
-<instance part="L1" gate="G$1" x="66.04" y="17.78" smashed="yes">
-<attribute name="NAME" x="62.23" y="21.844" size="1.778" layer="95"/>
-<attribute name="VALUE" x="62.23" y="12.192" size="1.778" layer="96"/>
+<instance part="L1" gate="G$1" x="71.12" y="78.74" smashed="yes">
+<attribute name="NAME" x="67.31" y="82.804" size="1.778" layer="95"/>
+<attribute name="VALUE" x="67.31" y="73.152" size="1.778" layer="96"/>
 </instance>
-<instance part="C4" gate="G$1" x="78.74" y="17.78" smashed="yes">
-<attribute name="NAME" x="80.264" y="18.161" size="1.778" layer="95"/>
-<attribute name="VALUE" x="80.264" y="13.081" size="1.778" layer="96"/>
-<attribute name="RATING" x="81.28" y="16.764" size="1.016" layer="97"/>
-<attribute name="PACKAGE" x="81.28" y="15.24" size="1.016" layer="97"/>
+<instance part="C4" gate="G$1" x="83.82" y="78.74" smashed="yes">
+<attribute name="NAME" x="85.344" y="79.121" size="1.778" layer="95"/>
+<attribute name="VALUE" x="85.344" y="74.041" size="1.778" layer="96"/>
+<attribute name="RATING" x="86.36" y="77.724" size="1.016" layer="97"/>
+<attribute name="PACKAGE" x="86.36" y="76.2" size="1.016" layer="97"/>
 </instance>
-<instance part="C7" gate="G$1" x="50.8" y="17.78" smashed="yes">
-<attribute name="NAME" x="52.324" y="18.161" size="1.778" layer="95"/>
-<attribute name="VALUE" x="52.324" y="13.081" size="1.778" layer="96"/>
-<attribute name="RATING" x="53.34" y="16.764" size="1.016" layer="97"/>
-<attribute name="PACKAGE" x="53.34" y="15.24" size="1.016" layer="97"/>
+<instance part="C7" gate="G$1" x="55.88" y="78.74" smashed="yes">
+<attribute name="NAME" x="57.404" y="79.121" size="1.778" layer="95"/>
+<attribute name="VALUE" x="57.404" y="74.041" size="1.778" layer="96"/>
+<attribute name="RATING" x="58.42" y="77.724" size="1.016" layer="97"/>
+<attribute name="PACKAGE" x="58.42" y="76.2" size="1.016" layer="97"/>
+</instance>
+<instance part="D1" gate="G$1" x="96.52" y="78.74" smashed="yes">
+<attribute name="NAME" x="99.314" y="80.645" size="1.778" layer="95"/>
+<attribute name="VALUE" x="99.314" y="77.851" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -15081,10 +15298,10 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <segment>
 <pinref part="C4" gate="G$1" pin="1"/>
 <pinref part="L1" gate="G$1" pin="2"/>
-<wire x1="78.74" y1="20.32" x2="73.66" y2="20.32" width="0.1524" layer="91"/>
-<wire x1="78.74" y1="20.32" x2="86.36" y2="20.32" width="0.1524" layer="91"/>
-<junction x="78.74" y="20.32"/>
-<label x="83.82" y="20.32" size="1.778" layer="95"/>
+<wire x1="83.82" y1="81.28" x2="78.74" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="83.82" y1="81.28" x2="91.44" y2="81.28" width="0.1524" layer="91"/>
+<junction x="83.82" y="81.28"/>
+<label x="88.9" y="81.28" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="VSS" class="0">
@@ -15101,11 +15318,11 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <segment>
 <pinref part="C4" gate="G$1" pin="2"/>
 <pinref part="L1" gate="G$1" pin="3"/>
-<wire x1="78.74" y1="12.7" x2="73.66" y2="12.7" width="0.1524" layer="91"/>
-<wire x1="73.66" y1="12.7" x2="73.66" y2="15.24" width="0.1524" layer="91"/>
-<wire x1="78.74" y1="12.7" x2="86.36" y2="12.7" width="0.1524" layer="91"/>
-<junction x="78.74" y="12.7"/>
-<label x="83.82" y="12.7" size="1.778" layer="95"/>
+<wire x1="83.82" y1="73.66" x2="78.74" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="78.74" y1="73.66" x2="78.74" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="83.82" y1="73.66" x2="91.44" y2="73.66" width="0.1524" layer="91"/>
+<junction x="83.82" y="73.66"/>
+<label x="88.9" y="73.66" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="AGND" class="0">
@@ -15263,23 +15480,23 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <net name="PGND" class="0">
 <segment>
 <pinref part="L1" gate="G$1" pin="4"/>
-<wire x1="58.42" y1="15.24" x2="55.88" y2="15.24" width="0.1524" layer="91"/>
-<wire x1="55.88" y1="15.24" x2="55.88" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="76.2" x2="60.96" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="60.96" y1="76.2" x2="60.96" y2="73.66" width="0.1524" layer="91"/>
 <pinref part="C7" gate="G$1" pin="2"/>
-<wire x1="55.88" y1="12.7" x2="50.8" y2="12.7" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="12.7" x2="43.18" y2="12.7" width="0.1524" layer="91"/>
-<junction x="50.8" y="12.7"/>
-<label x="43.18" y="12.7" size="1.778" layer="95"/>
+<wire x1="60.96" y1="73.66" x2="55.88" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="55.88" y1="73.66" x2="48.26" y2="73.66" width="0.1524" layer="91"/>
+<junction x="55.88" y="73.66"/>
+<label x="48.26" y="73.66" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="VPOE" class="0">
 <segment>
 <pinref part="L1" gate="G$1" pin="1"/>
 <pinref part="C7" gate="G$1" pin="1"/>
-<wire x1="58.42" y1="20.32" x2="50.8" y2="20.32" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="20.32" x2="43.18" y2="20.32" width="0.1524" layer="91"/>
-<junction x="50.8" y="20.32"/>
-<label x="43.18" y="20.32" size="1.778" layer="95"/>
+<wire x1="63.5" y1="81.28" x2="55.88" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="55.88" y1="81.28" x2="48.26" y2="81.28" width="0.1524" layer="91"/>
+<junction x="55.88" y="81.28"/>
+<label x="48.26" y="81.28" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>

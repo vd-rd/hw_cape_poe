@@ -3,7 +3,7 @@
 <eagle version="9.3.0">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.1" altunitdist="mm" altunit="mm"/>
@@ -1866,6 +1866,42 @@ grid 5.08 mm, diameter 10.5 mm</description>
 </package3d>
 </packages3d>
 </library>
+<library name="diode" urn="urn:adsk.eagle:library:210">
+<description>&lt;b&gt;Diodes&lt;/b&gt;&lt;p&gt;
+Based on the following sources:
+&lt;ul&gt;
+&lt;li&gt;Motorola : www.onsemi.com
+&lt;li&gt;Fairchild : www.fairchildsemi.com
+&lt;li&gt;Philips : www.semiconductors.com
+&lt;li&gt;Vishay : www.vishay.de
+&lt;/ul&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="SMBJ" urn="urn:adsk.eagle:footprint:43224/1" library_version="4">
+<description>&lt;b&gt;DO-214AA Modified J_BEND&lt;/b&gt;&lt;p&gt;
+Source: www.rsonline.de .. SMBJ12/C/15/C/24/C/30/C/5.0/C/7.5/C Voltage Suppressor. Data Sheet</description>
+<wire x1="2.24" y1="1.92" x2="2.24" y2="-1.92" width="0.1016" layer="51"/>
+<wire x1="2.24" y1="-1.92" x2="-2.24" y2="-1.92" width="0.1016" layer="21"/>
+<wire x1="-2.24" y1="-1.92" x2="-2.24" y2="1.92" width="0.1016" layer="51"/>
+<wire x1="-2.24" y1="1.92" x2="2.24" y2="1.92" width="0.1016" layer="21"/>
+<smd name="C" x="-2.03" y="0" dx="1.78" dy="2.16" layer="1"/>
+<smd name="A" x="2.04" y="0" dx="1.78" dy="2.16" layer="1" rot="R180"/>
+<text x="-1.905" y="2.54" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1.905" y="-3.81" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-2.8" y1="-1.1" x2="-2.25" y2="1.1" layer="51"/>
+<rectangle x1="2.25" y1="-1.1" x2="2.8" y2="1.1" layer="51"/>
+</package>
+</packages>
+<packages3d>
+<package3d name="SMBJ" urn="urn:adsk.eagle:package:43442/2" type="model" library_version="4">
+<description>DO-214AA Modified J_BEND
+Source: www.rsonline.de .. SMBJ12/C/15/C/24/C/30/C/5.0/C/7.5/C Voltage Suppressor. Data Sheet</description>
+<packageinstances>
+<packageinstance name="SMBJ"/>
+</packageinstances>
+</package3d>
+</packages3d>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -2157,10 +2193,16 @@ design rules under a new name.</description>
 <attribute name="PACKAGE" value="0603" x="52" y="12" size="1.778" layer="27" display="off"/>
 <attribute name="RATING" value="10V" x="52" y="12" size="1.778" layer="27" display="off"/>
 </element>
+<element name="D1" library="diode" library_urn="urn:adsk.eagle:library:210" package="SMBJ" package3d_urn="urn:adsk.eagle:package:43442/2" value="" x="-5" y="3" smashed="yes">
+<attribute name="NAME" x="-6.905" y="5.54" size="1.27" layer="25"/>
+<attribute name="VALUE" x="-6.905" y="-0.81" size="1.27" layer="27"/>
+</element>
 </elements>
 <signals>
 <signal name="GND">
 <contactref element="SV1" pad="1"/>
+<contactref element="SV3" pad="1"/>
+<wire x1="8.41" y1="38.27" x2="60.89" y2="1.73" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VSYS">
 <contactref element="SV1" pad="3"/>
@@ -2402,6 +2444,48 @@ design rules under a new name.</description>
 <contactref element="L1" pad="1"/>
 <contactref element="C7" pad="1"/>
 <wire x1="51.15" y1="12" x2="51.075" y2="9.425" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="RMII_TXEN">
+<contactref element="SV2" pad="2"/>
+</signal>
+<signal name="RMII_MDC">
+<contactref element="SV2" pad="3"/>
+</signal>
+<signal name="RMII_MDIO">
+<contactref element="SV2" pad="4"/>
+</signal>
+<signal name="RMII_RXER">
+<contactref element="SV2" pad="5"/>
+</signal>
+<signal name="RMII_TX0">
+<contactref element="SV2" pad="10"/>
+</signal>
+<signal name="RMII_RX0">
+<contactref element="SV2" pad="8"/>
+</signal>
+<signal name="RMII_TXCK">
+<contactref element="SV2" pad="6"/>
+</signal>
+<signal name="RMII_RXDV">
+<contactref element="SV2" pad="1"/>
+</signal>
+<signal name="RMII_RX1">
+<contactref element="SV2" pad="7"/>
+</signal>
+<signal name="RMII_TX1">
+<contactref element="SV2" pad="9"/>
+</signal>
+<signal name="USB_H1_DM">
+<contactref element="SV3" pad="2"/>
+</signal>
+<signal name="USB_H1_DP">
+<contactref element="SV3" pad="3"/>
+</signal>
+<signal name="USB_H2_DM">
+<contactref element="SV3" pad="4"/>
+</signal>
+<signal name="USB_H2_DP">
+<contactref element="SV3" pad="5"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
