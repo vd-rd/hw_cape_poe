@@ -14623,6 +14623,7 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <part name="L1" library="parts-bourns" library_urn="urn:adsk.eagle:library:10533641" deviceset="SRF2012" device="" package3d_urn="urn:adsk.eagle:package:10548405/2"/>
 <part name="C4" library="parts-passives" library_urn="urn:adsk.eagle:library:8154151" deviceset="CAP-" device="0603" package3d_urn="urn:adsk.eagle:package:8309187/3"/>
 <part name="C7" library="parts-passives" library_urn="urn:adsk.eagle:library:8154151" deviceset="CAP-" device="0603" package3d_urn="urn:adsk.eagle:package:8309187/3"/>
+<part name="AGND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="AGND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -15301,10 +15302,21 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <attribute name="VALUE" x="124.46" y="96.52" size="1.778" layer="96"/>
 </instance>
 <instance part="X1" gate="G$1" x="121.92" y="93.98" smashed="yes"/>
+<instance part="AGND4" gate="VR1" x="116.84" y="88.9" smashed="yes">
+<attribute name="VALUE" x="114.3" y="83.82" size="1.778" layer="96" rot="R90"/>
+</instance>
 </instances>
 <busses>
 </busses>
 <nets>
+<net name="AGND" class="0">
+<segment>
+<pinref part="X1" gate="G$1" pin="SHIELD"/>
+<wire x1="119.38" y1="93.98" x2="116.84" y2="93.98" width="0.1524" layer="91"/>
+<pinref part="AGND4" gate="VR1" pin="AGND"/>
+<wire x1="116.84" y1="93.98" x2="116.84" y2="91.44" width="0.1524" layer="91"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
