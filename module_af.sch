@@ -887,6 +887,28 @@ Metric Code Size 1005</description>
 <rectangle x1="0.3556" y1="-0.7239" x2="1.1057" y2="0.7262" layer="51"/>
 <rectangle x1="-0.1001" y1="-0.4001" x2="0.1001" y2="0.4001" layer="35"/>
 </package>
+<package name="C075-032X103" urn="urn:adsk.eagle:footprint:23155/1" library_version="34">
+<description>&lt;b&gt;CAPACITOR&lt;/b&gt;&lt;p&gt;
+grid 7.5 mm, outline 3.2 x 10.3 mm</description>
+<wire x1="4.826" y1="1.524" x2="-4.826" y2="1.524" width="0.1524" layer="21"/>
+<wire x1="-5.08" y1="1.27" x2="-5.08" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-4.826" y1="-1.524" x2="4.826" y2="-1.524" width="0.1524" layer="21"/>
+<wire x1="5.08" y1="-1.27" x2="5.08" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="4.826" y1="1.524" x2="5.08" y2="1.27" width="0.1524" layer="21" curve="-90"/>
+<wire x1="4.826" y1="-1.524" x2="5.08" y2="-1.27" width="0.1524" layer="21" curve="90"/>
+<wire x1="-5.08" y1="-1.27" x2="-4.826" y2="-1.524" width="0.1524" layer="21" curve="90"/>
+<wire x1="-5.08" y1="1.27" x2="-4.826" y2="1.524" width="0.1524" layer="21" curve="-90"/>
+<wire x1="0.508" y1="0" x2="2.54" y2="0" width="0.1524" layer="21"/>
+<wire x1="-2.54" y1="0" x2="-0.508" y2="0" width="0.1524" layer="21"/>
+<wire x1="-0.508" y1="0.889" x2="-0.508" y2="0" width="0.4064" layer="21"/>
+<wire x1="-0.508" y1="0" x2="-0.508" y2="-0.889" width="0.4064" layer="21"/>
+<wire x1="0.508" y1="0.889" x2="0.508" y2="0" width="0.4064" layer="21"/>
+<wire x1="0.508" y1="0" x2="0.508" y2="-0.889" width="0.4064" layer="21"/>
+<pad name="1" x="-3.81" y="0" drill="0.9144" shape="octagon"/>
+<pad name="2" x="3.81" y="0" drill="0.9144" shape="octagon"/>
+<text x="-4.826" y="1.905" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-4.826" y="-3.048" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+</package>
 </packages>
 <packages3d>
 <package3d name="R0603" urn="urn:adsk.eagle:package:8309995/2" type="model" library_version="29">
@@ -925,6 +947,13 @@ Metric Code Size 1005</description>
 <description>&lt;b&gt;CAPACITOR&lt;/b&gt;&lt;p&gt;</description>
 <packageinstances>
 <packageinstance name="FER0805"/>
+</packageinstances>
+</package3d>
+<package3d name="C075-032X103" urn="urn:adsk.eagle:package:10600575/2" type="model" library_version="34">
+<description>CAPACITOR
+grid 7.5 mm, outline 3.2 x 10.3 mm</description>
+<packageinstances>
+<packageinstance name="C075-032X103"/>
 </packageinstances>
 </package3d>
 </packages3d>
@@ -984,7 +1013,7 @@ Metric Code Size 1005</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="CAP-" urn="urn:adsk.eagle:component:8154557/10" prefix="C" uservalue="yes" library_version="29">
+<deviceset name="CAP-" urn="urn:adsk.eagle:component:8154557/11" prefix="C" uservalue="yes" library_version="34">
 <gates>
 <gate name="G$1" symbol="C-EU" x="0" y="0"/>
 </gates>
@@ -1047,6 +1076,18 @@ Metric Code Size 1005</description>
 <attribute name="PACKAGE" value="0603" constant="no"/>
 <attribute name="RATING" value="10V" constant="no"/>
 </technology>
+</technologies>
+</device>
+<device name="075-032X103" package="C075-032X103">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:10600575/2"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
 </technologies>
 </device>
 </devices>
@@ -13942,12 +13983,30 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <text x="-2.54" y="-5.08" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
 <pin name="AGND" x="0" y="2.54" visible="off" length="short" direction="sup" rot="R270"/>
 </symbol>
+<symbol name="GND" urn="urn:adsk.eagle:symbol:26925/1" library_version="1">
+<wire x1="-1.905" y1="0" x2="1.905" y2="0" width="0.254" layer="94"/>
+<text x="-2.54" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="GND" x="0" y="2.54" visible="off" length="short" direction="sup" rot="R270"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="AGND" urn="urn:adsk.eagle:component:26977/1" prefix="AGND" library_version="1">
 <description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
 <gates>
 <gate name="VR1" symbol="AGND" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="GND" urn="urn:adsk.eagle:component:26954/1" prefix="GND" library_version="1">
+<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
+<gates>
+<gate name="1" symbol="GND" x="0" y="0"/>
 </gates>
 <devices>
 <device name="">
@@ -15297,148 +15356,6 @@ diameter 5 mm, horizontal, grid 15.24 mm</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="optocoupler" urn="urn:adsk.eagle:library:320">
-<description>&lt;b&gt;Opto Couplers&lt;/b&gt;&lt;p&gt;
-Siemens, Hewlett-Packard, Texas Instuments, Sharp, Motorola&lt;p&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-<package name="DIL04" urn="urn:adsk.eagle:footprint:21858/1" library_version="2">
-<description>&lt;b&gt;Dual In Line Package&lt;/b&gt;</description>
-<wire x1="2.54" y1="2.921" x2="-2.54" y2="2.921" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="-2.921" x2="2.54" y2="-2.921" width="0.1524" layer="21"/>
-<wire x1="2.54" y1="2.921" x2="2.54" y2="-2.921" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="2.921" x2="-2.54" y2="1.016" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="-2.921" x2="-2.54" y2="-1.016" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="1.016" x2="-2.54" y2="-1.016" width="0.1524" layer="21" curve="-180"/>
-<pad name="1" x="-1.27" y="-3.81" drill="0.8128" shape="offset" rot="R270"/>
-<pad name="2" x="1.27" y="-3.81" drill="0.8128" shape="offset" rot="R270"/>
-<pad name="3" x="1.27" y="3.81" drill="0.8128" shape="offset" rot="R90"/>
-<pad name="4" x="-1.27" y="3.81" drill="0.8128" shape="offset" rot="R90"/>
-<text x="4.191" y="-2.921" size="1.27" layer="27" ratio="10" rot="R90">&gt;VALUE</text>
-<text x="-2.921" y="-2.667" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
-</package>
-<package name="DIL4-SMD" urn="urn:adsk.eagle:footprint:21919/1" library_version="2">
-<description>&lt;b&gt;Dual  In Line SMD&lt;/b&gt; 4 pol.&lt;p&gt;
-Source: LITE-ON ELECTRONICS, LTV816.pdf</description>
-<wire x1="2.315" y1="3.18" x2="2.315" y2="-2.164" width="0.1524" layer="21"/>
-<wire x1="2.315" y1="-2.164" x2="2.315" y2="-3.18" width="0.1524" layer="21"/>
-<wire x1="-2.315" y1="3.18" x2="2.315" y2="3.18" width="0.1524" layer="21"/>
-<wire x1="2.315" y1="-3.18" x2="-2.315" y2="-3.18" width="0.1524" layer="21"/>
-<wire x1="-2.315" y1="-3.18" x2="-2.315" y2="3.18" width="0.1524" layer="21"/>
-<wire x1="2.315" y1="-2.164" x2="-2.315" y2="-2.164" width="0.1524" layer="21"/>
-<smd name="1" x="-1.27" y="-4.77" dx="1.6" dy="2" layer="1"/>
-<smd name="2" x="1.27" y="-4.77" dx="1.6" dy="2" layer="1"/>
-<smd name="3" x="1.27" y="4.77" dx="1.6" dy="2" layer="1" rot="R180"/>
-<smd name="4" x="-1.27" y="4.77" dx="1.6" dy="2" layer="1" rot="R180"/>
-<text x="-2.54" y="-3.175" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
-<text x="3.81" y="-3.175" size="1.27" layer="27" ratio="10" rot="R90">&gt;VALUE</text>
-<rectangle x1="-1.875" y1="-5.15" x2="-0.65" y2="-3.2" layer="51"/>
-<rectangle x1="0.665" y1="-5.15" x2="1.89" y2="-3.2" layer="51"/>
-<rectangle x1="0.65" y1="3.2" x2="1.875" y2="5.15" layer="51" rot="R180"/>
-<rectangle x1="-1.89" y1="3.2" x2="-0.665" y2="5.15" layer="51" rot="R180"/>
-</package>
-</packages>
-<packages3d>
-<package3d name="DIL04" urn="urn:adsk.eagle:package:21938/1" type="box" library_version="2">
-<description>Dual In Line Package</description>
-<packageinstances>
-<packageinstance name="DIL04"/>
-</packageinstances>
-</package3d>
-<package3d name="DIL4-SMD" urn="urn:adsk.eagle:package:21963/1" type="box" library_version="2">
-<description>Dual  In Line SMD 4 pol.
-Source: LITE-ON ELECTRONICS, LTV816.pdf</description>
-<packageinstances>
-<packageinstance name="DIL4-SMD"/>
-</packageinstances>
-</package3d>
-</packages3d>
-<symbols>
-<symbol name="OK" urn="urn:adsk.eagle:symbol:21854/2" library_version="2">
-<wire x1="-2.413" y1="-1.143" x2="-1.016" y2="0.254" width="0.1524" layer="94"/>
-<wire x1="-1.016" y1="0.254" x2="-1.905" y2="-0.127" width="0.1524" layer="94"/>
-<wire x1="-1.905" y1="-0.127" x2="-1.397" y2="-0.635" width="0.1524" layer="94"/>
-<wire x1="-1.397" y1="-0.635" x2="-1.016" y2="0.254" width="0.1524" layer="94"/>
-<wire x1="-1.143" y1="1.397" x2="-2.032" y2="1.016" width="0.1524" layer="94"/>
-<wire x1="-2.032" y1="1.016" x2="-1.524" y2="0.508" width="0.1524" layer="94"/>
-<wire x1="-1.524" y1="0.508" x2="-1.143" y2="1.397" width="0.1524" layer="94"/>
-<wire x1="-2.54" y1="0" x2="-1.143" y2="1.397" width="0.1524" layer="94"/>
-<wire x1="-3.175" y1="1.27" x2="-4.445" y2="-1.27" width="0.254" layer="94"/>
-<wire x1="-4.445" y1="-1.27" x2="-5.715" y2="1.27" width="0.254" layer="94"/>
-<wire x1="-3.175" y1="-1.27" x2="-4.445" y2="-1.27" width="0.254" layer="94"/>
-<wire x1="-4.445" y1="-1.27" x2="-5.715" y2="-1.27" width="0.254" layer="94"/>
-<wire x1="-3.175" y1="1.27" x2="-4.445" y2="1.27" width="0.254" layer="94"/>
-<wire x1="-4.445" y1="1.27" x2="-5.715" y2="1.27" width="0.254" layer="94"/>
-<wire x1="-6.985" y1="5.08" x2="4.445" y2="5.08" width="0.4064" layer="94"/>
-<wire x1="-6.985" y1="-5.08" x2="4.445" y2="-5.08" width="0.4064" layer="94"/>
-<wire x1="-4.445" y1="2.54" x2="-4.445" y2="1.27" width="0.1524" layer="94"/>
-<wire x1="-6.985" y1="5.08" x2="-6.985" y2="-5.08" width="0.4064" layer="94"/>
-<wire x1="-4.445" y1="-1.27" x2="-4.445" y2="-2.54" width="0.1524" layer="94"/>
-<wire x1="4.445" y1="5.08" x2="4.445" y2="-5.08" width="0.4064" layer="94"/>
-<wire x1="-4.445" y1="2.54" x2="-7.62" y2="2.54" width="0.1524" layer="94"/>
-<wire x1="-4.445" y1="-2.54" x2="-7.62" y2="-2.54" width="0.1524" layer="94"/>
-<wire x1="2.54" y1="2.54" x2="0" y2="0" width="0.1524" layer="94"/>
-<wire x1="0" y1="0" x2="2.286" y2="-2.286" width="0.1524" layer="94"/>
-<wire x1="2.54" y1="-2.54" x2="5.08" y2="-2.54" width="0.1524" layer="94"/>
-<wire x1="2.54" y1="2.54" x2="5.08" y2="2.54" width="0.1524" layer="94"/>
-<wire x1="1.778" y1="-1.016" x2="2.286" y2="-2.286" width="0.1524" layer="94"/>
-<wire x1="2.286" y1="-2.286" x2="2.54" y2="-2.54" width="0.1524" layer="94"/>
-<wire x1="2.286" y1="-2.286" x2="1.016" y2="-1.778" width="0.1524" layer="94"/>
-<wire x1="1.016" y1="-1.778" x2="1.778" y2="-1.016" width="0.1524" layer="94"/>
-<text x="-6.985" y="5.715" size="1.778" layer="95">&gt;NAME</text>
-<text x="-6.985" y="-7.62" size="1.778" layer="96">&gt;VALUE</text>
-<rectangle x1="-0.381" y1="-2.54" x2="0.381" y2="2.54" layer="94"/>
-<pin name="A" x="-10.16" y="2.54" visible="pad" length="short" direction="pas"/>
-<pin name="C" x="-10.16" y="-2.54" visible="pad" length="short" direction="pas"/>
-<pin name="EMIT" x="7.62" y="-2.54" visible="pad" length="short" direction="pas" rot="R180"/>
-<pin name="COL" x="7.62" y="2.54" visible="pad" length="short" direction="pas" rot="R180"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="LTV816" urn="urn:adsk.eagle:component:22052/2" prefix="OK" library_version="2">
-<description>&lt;b&gt;OPTO COUPLER&lt;/b&gt;&lt;p&gt;
-Source: LITEON, LTV816.pdf</description>
-<gates>
-<gate name="G$1" symbol="OK" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="DIL04">
-<connects>
-<connect gate="G$1" pin="A" pad="1"/>
-<connect gate="G$1" pin="C" pad="2"/>
-<connect gate="G$1" pin="COL" pad="4"/>
-<connect gate="G$1" pin="EMIT" pad="3"/>
-</connects>
-<package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:21938/1"/>
-</package3dinstances>
-<technologies>
-<technology name="">
-<attribute name="MF" value="" constant="no"/>
-<attribute name="MPN" value="" constant="no"/>
-<attribute name="OC_FARNELL" value="unknown" constant="no"/>
-<attribute name="OC_NEWARK" value="unknown" constant="no"/>
-</technology>
-</technologies>
-</device>
-<device name="S" package="DIL4-SMD">
-<connects>
-<connect gate="G$1" pin="A" pad="1"/>
-<connect gate="G$1" pin="C" pad="2"/>
-<connect gate="G$1" pin="COL" pad="4"/>
-<connect gate="G$1" pin="EMIT" pad="3"/>
-</connects>
-<package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:21963/1"/>
-</package3dinstances>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="parts-diotec" urn="urn:adsk.eagle:library:8169101">
 <packages>
 <package name="DO214AC" urn="urn:adsk.eagle:footprint:43214/1" library_version="5">
@@ -15582,6 +15499,200 @@ Source: LITEON, LTV816.pdf</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="parts-ferrocore" urn="urn:adsk.eagle:library:7633163">
+<packages>
+<package name="COIL0608" urn="urn:adsk.eagle:footprint:7645792/1" library_version="11">
+<circle x="0" y="0" radius="3.8" width="0.127" layer="51"/>
+<circle x="0" y="0" radius="3.8013125" width="0.4" layer="21"/>
+<text x="-2.5" y="4.5" size="1.27" layer="21">&gt;NAME</text>
+<pad name="P$1" x="-1.5" y="0" drill="0.8"/>
+<pad name="P$2" x="1.5" y="0" drill="0.8"/>
+</package>
+</packages>
+<packages3d>
+<package3d name="INDRD300W65D735H950C" urn="urn:adsk.eagle:package:7645794/2" type="model" library_version="11">
+<description>Radial Non-Polarized Inductor, 3.00 mm pitch, 7.35 mm body diameter, 9.50 mm body height
+&lt;p&gt;Radial Non-Polarized Inductor package with 3.00 mm pitch, 0.65 mm lead diameter, 7.35 mm body diameter and 9.50 mm body height&lt;/p&gt;</description>
+<packageinstances>
+<packageinstance name="COIL0608"/>
+</packageinstances>
+</package3d>
+</packages3d>
+<symbols>
+<symbol name="INDUCTOR" urn="urn:adsk.eagle:symbol:7645793/2" library_version="11">
+<text x="2.54" y="10.16" size="1.778" layer="95" rot="R270">&gt;NAME</text>
+<text x="2.54" y="0" size="1.778" layer="96" rot="R270">&gt;VALUE</text>
+<text x="2.54" y="2.54" size="1.016" layer="97">&gt;PACKAGE</text>
+<text x="2.54" y="4.064" size="1.016" layer="97">&gt;CURRENT</text>
+<pin name="1" x="0" y="5.08" visible="off" length="short" direction="pas" swaplevel="1" rot="R270"/>
+<pin name="2" x="0" y="-5.08" visible="off" length="short" direction="pas" swaplevel="1" rot="R90"/>
+<wire x1="0" y1="2.54" x2="0" y2="1.27" width="0.254" layer="94" curve="-180"/>
+<wire x1="0" y1="1.27" x2="0" y2="0" width="0.254" layer="94" curve="-180"/>
+<wire x1="0" y1="0" x2="0" y2="-1.27" width="0.254" layer="94" curve="-180"/>
+<wire x1="0" y1="-1.27" x2="0" y2="-2.54" width="0.254" layer="94" curve="-180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="COIL0608-" urn="urn:adsk.eagle:component:7645795/3" prefix="L" uservalue="yes" library_version="11">
+<gates>
+<gate name="G$1" symbol="INDUCTOR" x="0" y="0"/>
+</gates>
+<devices>
+<device name="0.022" package="COIL0608">
+<connects>
+<connect gate="G$1" pin="1" pad="P$1"/>
+<connect gate="G$1" pin="2" pad="P$2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:7645794/2"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+<library name="parts-liteon" urn="urn:adsk.eagle:library:8435025">
+<packages>
+<package name="DIL4-SMD" urn="urn:adsk.eagle:footprint:10600544/1" library_version="4">
+<description>&lt;b&gt;Dual  In Line SMD&lt;/b&gt; 4 pol.&lt;p&gt;
+Source: LITE-ON ELECTRONICS, LTV816.pdf</description>
+<wire x1="2.315" y1="3.18" x2="2.315" y2="-2.164" width="0.1524" layer="21"/>
+<wire x1="2.315" y1="-2.164" x2="2.315" y2="-3.18" width="0.1524" layer="21"/>
+<wire x1="-2.315" y1="3.18" x2="2.315" y2="3.18" width="0.1524" layer="21"/>
+<wire x1="2.315" y1="-3.18" x2="-2.315" y2="-3.18" width="0.1524" layer="21"/>
+<wire x1="-2.315" y1="-3.18" x2="-2.315" y2="3.18" width="0.1524" layer="21"/>
+<wire x1="2.315" y1="-2.164" x2="-2.315" y2="-2.164" width="0.1524" layer="21"/>
+<smd name="1" x="-1.27" y="-4.77" dx="1.6" dy="2" layer="1"/>
+<smd name="2" x="1.27" y="-4.77" dx="1.6" dy="2" layer="1"/>
+<smd name="3" x="1.27" y="4.77" dx="1.6" dy="2" layer="1" rot="R180"/>
+<smd name="4" x="-1.27" y="4.77" dx="1.6" dy="2" layer="1" rot="R180"/>
+<text x="-2.54" y="-3.175" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
+<text x="3.81" y="-3.175" size="1.27" layer="27" ratio="10" rot="R90">&gt;VALUE</text>
+<rectangle x1="-1.875" y1="-5.15" x2="-0.65" y2="-3.2" layer="51"/>
+<rectangle x1="0.665" y1="-5.15" x2="1.89" y2="-3.2" layer="51"/>
+<rectangle x1="0.65" y1="3.2" x2="1.875" y2="5.15" layer="51" rot="R180"/>
+<rectangle x1="-1.89" y1="3.2" x2="-0.665" y2="5.15" layer="51" rot="R180"/>
+</package>
+<package name="DIL04" urn="urn:adsk.eagle:footprint:21858/1" library_version="4">
+<description>&lt;b&gt;Dual In Line Package&lt;/b&gt;</description>
+<wire x1="2.54" y1="2.921" x2="-2.54" y2="2.921" width="0.1524" layer="21"/>
+<wire x1="-2.54" y1="-2.921" x2="2.54" y2="-2.921" width="0.1524" layer="21"/>
+<wire x1="2.54" y1="2.921" x2="2.54" y2="-2.921" width="0.1524" layer="21"/>
+<wire x1="-2.54" y1="2.921" x2="-2.54" y2="1.016" width="0.1524" layer="21"/>
+<wire x1="-2.54" y1="-2.921" x2="-2.54" y2="-1.016" width="0.1524" layer="21"/>
+<wire x1="-2.54" y1="1.016" x2="-2.54" y2="-1.016" width="0.1524" layer="21" curve="-180"/>
+<pad name="1" x="-1.27" y="-3.81" drill="0.8128" shape="offset" rot="R270"/>
+<pad name="2" x="1.27" y="-3.81" drill="0.8128" shape="offset" rot="R270"/>
+<pad name="3" x="1.27" y="3.81" drill="0.8128" shape="offset" rot="R90"/>
+<pad name="4" x="-1.27" y="3.81" drill="0.8128" shape="offset" rot="R90"/>
+<text x="4.191" y="-2.921" size="1.27" layer="27" ratio="10" rot="R90">&gt;VALUE</text>
+<text x="-2.921" y="-2.667" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
+</package>
+</packages>
+<packages3d>
+<package3d name="DIL4-SMD" urn="urn:adsk.eagle:package:10600546/2" type="model" library_version="4">
+<description>&lt;b&gt;Dual  In Line SMD&lt;/b&gt; 4 pol.&lt;p&gt;
+Source: LITE-ON ELECTRONICS, LTV816.pdf</description>
+<packageinstances>
+<packageinstance name="DIL4-SMD"/>
+</packageinstances>
+</package3d>
+<package3d name="DIL04" urn="urn:adsk.eagle:package:21938/1" type="box" library_version="4">
+<description>Dual In Line Package</description>
+<packageinstances>
+<packageinstance name="DIL04"/>
+</packageinstances>
+</package3d>
+</packages3d>
+<symbols>
+<symbol name="OK" urn="urn:adsk.eagle:symbol:10600545/1" library_version="4">
+<wire x1="-2.413" y1="-1.143" x2="-1.016" y2="0.254" width="0.1524" layer="94"/>
+<wire x1="-1.016" y1="0.254" x2="-1.905" y2="-0.127" width="0.1524" layer="94"/>
+<wire x1="-1.905" y1="-0.127" x2="-1.397" y2="-0.635" width="0.1524" layer="94"/>
+<wire x1="-1.397" y1="-0.635" x2="-1.016" y2="0.254" width="0.1524" layer="94"/>
+<wire x1="-1.143" y1="1.397" x2="-2.032" y2="1.016" width="0.1524" layer="94"/>
+<wire x1="-2.032" y1="1.016" x2="-1.524" y2="0.508" width="0.1524" layer="94"/>
+<wire x1="-1.524" y1="0.508" x2="-1.143" y2="1.397" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-1.143" y2="1.397" width="0.1524" layer="94"/>
+<wire x1="-3.175" y1="1.27" x2="-4.445" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="-4.445" y1="-1.27" x2="-5.715" y2="1.27" width="0.254" layer="94"/>
+<wire x1="-3.175" y1="-1.27" x2="-4.445" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="-4.445" y1="-1.27" x2="-5.715" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="-3.175" y1="1.27" x2="-4.445" y2="1.27" width="0.254" layer="94"/>
+<wire x1="-4.445" y1="1.27" x2="-5.715" y2="1.27" width="0.254" layer="94"/>
+<wire x1="-6.985" y1="5.08" x2="4.445" y2="5.08" width="0.4064" layer="94"/>
+<wire x1="-6.985" y1="-5.08" x2="4.445" y2="-5.08" width="0.4064" layer="94"/>
+<wire x1="-4.445" y1="2.54" x2="-4.445" y2="1.27" width="0.1524" layer="94"/>
+<wire x1="-6.985" y1="5.08" x2="-6.985" y2="-5.08" width="0.4064" layer="94"/>
+<wire x1="-4.445" y1="-1.27" x2="-4.445" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="4.445" y1="5.08" x2="4.445" y2="-5.08" width="0.4064" layer="94"/>
+<wire x1="-4.445" y1="2.54" x2="-7.62" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="-4.445" y1="-2.54" x2="-7.62" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="2.54" x2="0" y2="0" width="0.1524" layer="94"/>
+<wire x1="0" y1="0" x2="2.286" y2="-2.286" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="5.08" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="2.54" x2="5.08" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="1.778" y1="-1.016" x2="2.286" y2="-2.286" width="0.1524" layer="94"/>
+<wire x1="2.286" y1="-2.286" x2="2.54" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="2.286" y1="-2.286" x2="1.016" y2="-1.778" width="0.1524" layer="94"/>
+<wire x1="1.016" y1="-1.778" x2="1.778" y2="-1.016" width="0.1524" layer="94"/>
+<text x="-6.985" y="5.715" size="1.778" layer="95">&gt;NAME</text>
+<text x="-6.985" y="-7.62" size="1.778" layer="96">&gt;VALUE</text>
+<rectangle x1="-0.381" y1="-2.54" x2="0.381" y2="2.54" layer="94"/>
+<pin name="A" x="-10.16" y="2.54" visible="pad" length="short" direction="pas"/>
+<pin name="C" x="-10.16" y="-2.54" visible="pad" length="short" direction="pas"/>
+<pin name="EMIT" x="7.62" y="-2.54" visible="pad" length="short" direction="pas" rot="R180"/>
+<pin name="COL" x="7.62" y="2.54" visible="pad" length="short" direction="pas" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="LTV816" urn="urn:adsk.eagle:component:10600547/2" prefix="OK" library_version="4">
+<description>&lt;b&gt;OPTO COUPLER&lt;/b&gt;&lt;p&gt;
+Source: LITEON, LTV816.pdf</description>
+<gates>
+<gate name="G$1" symbol="OK" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="DIL04">
+<connects>
+<connect gate="G$1" pin="A" pad="1"/>
+<connect gate="G$1" pin="C" pad="2"/>
+<connect gate="G$1" pin="COL" pad="4"/>
+<connect gate="G$1" pin="EMIT" pad="3"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:21938/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="" constant="no"/>
+<attribute name="OC_FARNELL" value="unknown" constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="S" package="DIL4-SMD">
+<connects>
+<connect gate="G$1" pin="A" pad="1"/>
+<connect gate="G$1" pin="C" pad="2"/>
+<connect gate="G$1" pin="COL" pad="4"/>
+<connect gate="G$1" pin="EMIT" pad="3"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:10600546/2"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -15615,9 +15726,9 @@ Source: LITEON, LTV816.pdf</description>
 <part name="AGND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="AGND" device=""/>
 <part name="IC1" library="parts-silabs" library_urn="urn:adsk.eagle:library:10599107" deviceset="SI3402-C" device="" package3d_urn="urn:adsk.eagle:package:10596951/2"/>
 <part name="T2" library="parts-coilcraft" library_urn="urn:adsk.eagle:library:10599495" deviceset="FA2" device="805-CL" package3d_urn="urn:adsk.eagle:package:10599498/2"/>
-<part name="OK1" library="optocoupler" library_urn="urn:adsk.eagle:library:320" deviceset="LTV816" device="S" package3d_urn="urn:adsk.eagle:package:21963/1" value="LTV817"/>
-<part name="C8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="075-032X103" package3d_urn="urn:adsk.eagle:package:23646/1"/>
-<part name="C9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="075-032X103" package3d_urn="urn:adsk.eagle:package:23646/1"/>
+<part name="OK1" library="parts-liteon" library_urn="urn:adsk.eagle:library:8435025" deviceset="LTV816" device="S" package3d_urn="urn:adsk.eagle:package:10600546/2" value="LTV817"/>
+<part name="C8" library="parts-passives" library_urn="urn:adsk.eagle:library:8154151" deviceset="CAP-" device="075-032X103" package3d_urn="urn:adsk.eagle:package:10600575/2"/>
+<part name="C9" library="parts-passives" library_urn="urn:adsk.eagle:library:8154151" deviceset="CAP-" device="075-032X103" package3d_urn="urn:adsk.eagle:package:10600575/2"/>
 <part name="D2" library="diode" library_urn="urn:adsk.eagle:library:210" deviceset="SCHOTTKY-DIODE" device="SMC" package3d_urn="urn:adsk.eagle:package:43425/2"/>
 <part name="D3" library="parts-diotec" library_urn="urn:adsk.eagle:library:8169101" deviceset="SK1" device="10" package3d_urn="urn:adsk.eagle:package:10600004/2"/>
 <part name="C10" library="parts-passives" library_urn="urn:adsk.eagle:library:8154151" deviceset="CAP-" device="0603" package3d_urn="urn:adsk.eagle:package:8309187/3" value="1nF"/>
@@ -15649,6 +15760,14 @@ Source: LITEON, LTV816.pdf</description>
 <part name="C3" library="parts-passives" library_urn="urn:adsk.eagle:library:8154151" deviceset="CAP-" device="0603" package3d_urn="urn:adsk.eagle:package:8309187/3" value="15nF"/>
 <part name="C4" library="parts-passives" library_urn="urn:adsk.eagle:library:8154151" deviceset="CAP-" device="0603" package3d_urn="urn:adsk.eagle:package:8309187/3" value="100nF"/>
 <part name="R10" library="parts-passives" library_urn="urn:adsk.eagle:library:8154151" deviceset="RES-" device="0603" package3d_urn="urn:adsk.eagle:package:8309995/2" value="0"/>
+<part name="C7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-EU" device="E5-10.5" package3d_urn="urn:adsk.eagle:package:23372/2"/>
+<part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="L1" library="parts-ferrocore" library_urn="urn:adsk.eagle:library:7633163" deviceset="COIL0608-" device="0.022" package3d_urn="urn:adsk.eagle:package:7645794/2"/>
+<part name="R11" library="parts-passives" library_urn="urn:adsk.eagle:library:8154151" deviceset="RES-" device="0603" package3d_urn="urn:adsk.eagle:package:8309995/2" value="2.05k"/>
+<part name="AGND5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="AGND" device=""/>
+<part name="L6" library="parts-passives" library_urn="urn:adsk.eagle:library:8154151" deviceset="FER-" device="0805" package3d_urn="urn:adsk.eagle:package:10599322/2"/>
 </parts>
 <sheets>
 <sheet>
@@ -16084,9 +16203,9 @@ Source: LITEON, LTV816.pdf</description>
 <attribute name="NAME" x="167.259" y="87.884" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="172.339" y="87.884" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="D2" gate="G$1" x="190.5" y="55.88" smashed="yes">
-<attribute name="NAME" x="188.214" y="57.785" size="1.778" layer="95"/>
-<attribute name="VALUE" x="188.214" y="52.451" size="1.778" layer="96"/>
+<instance part="D2" gate="G$1" x="182.88" y="60.96" smashed="yes">
+<attribute name="NAME" x="180.594" y="62.865" size="1.778" layer="95"/>
+<attribute name="VALUE" x="180.594" y="57.531" size="1.778" layer="96"/>
 </instance>
 <instance part="D3" gate="G$1" x="22.86" y="38.1" smashed="yes" rot="R90">
 <attribute name="NAME" x="20.955" y="35.814" size="1.778" layer="95" rot="R90"/>
@@ -16242,6 +16361,37 @@ Source: LITEON, LTV816.pdf</description>
 <attribute name="VALUE" x="152.908" y="74.168" size="1.778" layer="96"/>
 <attribute name="PACKAGE" x="147.574" y="73.152" size="1.016" layer="97"/>
 </instance>
+<instance part="C7" gate="G$1" x="198.12" y="58.42" smashed="yes">
+<attribute name="NAME" x="199.263" y="58.9026" size="1.778" layer="95"/>
+<attribute name="VALUE" x="199.263" y="53.8226" size="1.778" layer="96"/>
+</instance>
+<instance part="GND1" gate="1" x="220.98" y="27.94" smashed="yes">
+<attribute name="VALUE" x="218.44" y="25.4" size="1.778" layer="96"/>
+</instance>
+<instance part="GND2" gate="1" x="177.8" y="43.18" smashed="yes">
+<attribute name="VALUE" x="175.26" y="40.64" size="1.778" layer="96"/>
+</instance>
+<instance part="GND3" gate="1" x="198.12" y="48.26" smashed="yes">
+<attribute name="VALUE" x="195.58" y="45.72" size="1.778" layer="96"/>
+</instance>
+<instance part="L1" gate="G$1" x="190.5" y="60.96" smashed="yes" rot="R90">
+<attribute name="NAME" x="180.34" y="63.5" size="1.778" layer="95"/>
+<attribute name="VALUE" x="190.5" y="63.5" size="1.778" layer="96"/>
+</instance>
+<instance part="R11" gate="G$1" x="190.5" y="78.74" smashed="yes">
+<attribute name="NAME" x="186.69" y="80.2386" size="1.778" layer="95"/>
+<attribute name="VALUE" x="186.69" y="75.438" size="1.778" layer="96"/>
+<attribute name="PACKAGE" x="188.214" y="78.232" size="1.016" layer="97"/>
+</instance>
+<instance part="AGND5" gate="VR1" x="246.38" y="58.42" smashed="yes">
+<attribute name="VALUE" x="243.84" y="53.34" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="L6" gate="G$1" x="236.22" y="63.5" smashed="yes">
+<attribute name="NAME" x="232.41" y="64.9986" size="1.778" layer="95"/>
+<attribute name="VALUE" x="232.41" y="60.198" size="1.778" layer="96"/>
+<attribute name="PACKAGE" x="231.14" y="62.23" size="1.016" layer="97"/>
+<attribute name="CURRENT" x="236.22" y="62.23" size="1.016" layer="97"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -16374,6 +16524,12 @@ Source: LITEON, LTV816.pdf</description>
 <pinref part="C5" gate="G$1" pin="2"/>
 <wire x1="241.3" y1="99.06" x2="241.3" y2="101.6" width="0.1524" layer="91"/>
 <pinref part="AGND3" gate="VR1" pin="AGND"/>
+</segment>
+<segment>
+<pinref part="L6" gate="G$1" pin="2"/>
+<wire x1="241.3" y1="63.5" x2="246.38" y2="63.5" width="0.1524" layer="91"/>
+<pinref part="AGND5" gate="VR1" pin="AGND"/>
+<wire x1="246.38" y1="63.5" x2="246.38" y2="60.96" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="TD+" class="0">
@@ -16705,6 +16861,11 @@ Source: LITEON, LTV816.pdf</description>
 <wire x1="45.72" y1="86.36" x2="40.64" y2="86.36" width="0.1524" layer="91"/>
 <label x="38.1" y="86.36" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="L6" gate="G$1" pin="1"/>
+<wire x1="231.14" y1="63.5" x2="223.52" y2="63.5" width="0.1524" layer="91"/>
+<label x="220.98" y="63.5" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="HSO" class="0">
 <segment>
@@ -16848,13 +17009,19 @@ Source: LITEON, LTV816.pdf</description>
 <net name="+5V" class="0">
 <segment>
 <pinref part="C9" gate="G$1" pin="2"/>
-<wire x1="172.72" y1="86.36" x2="190.5" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="172.72" y1="86.36" x2="195.58" y2="86.36" width="0.1524" layer="91"/>
 <label x="182.88" y="86.36" size="1.778" layer="95"/>
+<pinref part="R11" gate="G$1" pin="2"/>
+<wire x1="195.58" y1="78.74" x2="195.58" y2="86.36" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="R8" gate="G$1" pin="2"/>
-<wire x1="210.82" y1="60.96" x2="208.28" y2="60.96" width="0.1524" layer="91"/>
 <label x="205.74" y="60.96" size="1.778" layer="95"/>
+<pinref part="C7" gate="G$1" pin="+"/>
+<wire x1="210.82" y1="60.96" x2="198.12" y2="60.96" width="0.1524" layer="91"/>
+<pinref part="L1" gate="G$1" pin="2"/>
+<wire x1="198.12" y1="60.96" x2="195.58" y2="60.96" width="0.1524" layer="91"/>
+<junction x="198.12" y="60.96"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -16863,13 +17030,26 @@ Source: LITEON, LTV816.pdf</description>
 <wire x1="172.72" y1="35.56" x2="193.04" y2="35.56" width="0.1524" layer="91"/>
 <label x="185.42" y="35.56" size="1.778" layer="95"/>
 </segment>
-</net>
-<net name="N$1" class="0">
 <segment>
 <pinref part="VR1" gate="G$1" pin="A"/>
 <wire x1="226.06" y1="35.56" x2="226.06" y2="30.48" width="0.1524" layer="91"/>
-<wire x1="226.06" y1="30.48" x2="210.82" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="226.06" y1="30.48" x2="220.98" y2="30.48" width="0.1524" layer="91"/>
 <pinref part="R7" gate="G$1" pin="1"/>
+<pinref part="GND1" gate="1" pin="GND"/>
+<wire x1="220.98" y1="30.48" x2="210.82" y2="30.48" width="0.1524" layer="91"/>
+<junction x="220.98" y="30.48"/>
+</segment>
+<segment>
+<pinref part="T2" gate="G$1" pin="9"/>
+<pinref part="T2" gate="G$1" pin="10"/>
+<wire x1="177.8" y1="45.72" x2="177.8" y2="48.26" width="0.1524" layer="91"/>
+<pinref part="GND2" gate="1" pin="GND"/>
+<junction x="177.8" y="45.72"/>
+</segment>
+<segment>
+<pinref part="C7" gate="G$1" pin="-"/>
+<pinref part="GND3" gate="1" pin="GND"/>
+<wire x1="198.12" y1="53.34" x2="198.12" y2="50.8" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$6" class="0">
@@ -16888,13 +17068,9 @@ Source: LITEON, LTV816.pdf</description>
 <pinref part="T2" gate="G$1" pin="8"/>
 <pinref part="T2" gate="G$1" pin="7"/>
 <wire x1="177.8" y1="58.42" x2="177.8" y2="60.96" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$9" class="0">
-<segment>
-<pinref part="T2" gate="G$1" pin="9"/>
-<pinref part="T2" gate="G$1" pin="10"/>
-<wire x1="177.8" y1="45.72" x2="177.8" y2="48.26" width="0.1524" layer="91"/>
+<pinref part="D2" gate="G$1" pin="A"/>
+<wire x1="180.34" y1="60.96" x2="177.8" y2="60.96" width="0.1524" layer="91"/>
+<junction x="177.8" y="60.96"/>
 </segment>
 </net>
 <net name="N$10" class="0">
@@ -16912,6 +17088,32 @@ Source: LITEON, LTV816.pdf</description>
 <pinref part="C3" gate="G$1" pin="1"/>
 <pinref part="R10" gate="G$1" pin="1"/>
 <wire x1="144.78" y1="71.12" x2="144.78" y2="73.66" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<pinref part="D2" gate="G$1" pin="C"/>
+<pinref part="L1" gate="G$1" pin="1"/>
+</segment>
+</net>
+<net name="C" class="0">
+<segment>
+<pinref part="OK1" gate="G$1" pin="C"/>
+<wire x1="177.8" y1="73.66" x2="185.42" y2="73.66" width="0.1524" layer="91"/>
+<label x="182.88" y="73.66" size="1.778" layer="95" align="bottom-right"/>
+</segment>
+<segment>
+<pinref part="VR1" gate="G$1" pin="C"/>
+<wire x1="226.06" y1="43.18" x2="226.06" y2="45.72" width="0.1524" layer="91"/>
+<label x="228.6" y="45.72" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="A" class="0">
+<segment>
+<pinref part="OK1" gate="G$1" pin="A"/>
+<wire x1="177.8" y1="78.74" x2="185.42" y2="78.74" width="0.1524" layer="91"/>
+<label x="182.88" y="78.74" size="1.778" layer="95" align="bottom-right"/>
+<pinref part="R11" gate="G$1" pin="1"/>
 </segment>
 </net>
 </nets>
